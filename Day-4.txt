@@ -1,0 +1,177 @@
+
+1.public class hello {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+    Vehicle car = new Vehicle();
+    car.notify();
+  }
+}
+
+class vaish {
+  public static void main(String[] args) {
+    System.out.println("Hello vaish");
+  }
+}
+
+class Vehicle {
+  int wheels = 4;
+}
+
+class Rohit {
+  public static void main(String[] args) {
+    System.out.println("Hello Rohit");
+  }
+}
+2.class accountapp
+{
+    int id;
+    String accountHolderName;
+    double balance;
+    accountapp(int accountId,String accountHolderName, double balance)
+    {
+        System.out.println("This is constructor");
+    }
+    @Override
+    public String toString() {
+        return "accountapp [id=" + id + ", accountHolderName=" + accountHolderName + ", balance=" + balance + "]";
+    }
+}
+
+
+public class account {
+    public static void main(String[] args)
+    {
+        accountapp Account = new accountapp(1001,"john",45000);
+        System.out.println(Account);
+        
+    }
+    
+}
+
+3.class accountapp {
+    int id;
+    String accountHolderName;
+    double balance;
+
+    accountapp(int id, String accountHolderName, double balance) {
+        this.id = id;
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+
+    void displayAccountDetails() {
+        System.out.println("id: " + id);
+        System.out.println("accountHolderName: " + accountHolderName);
+        System.out.println("balance: " + balance);
+    }
+    void deposit(double amount)
+    {
+        balance+=amount;
+    }
+    void withdraw(double amount)
+    {
+        balance-=amount;
+    }
+    double getBalance()
+    {
+        return balance;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + ", accountHolderName: " + accountHolderName + ", balance: " + balance;
+    }
+}
+
+public class account {
+    public static void main(String[] args) {
+        accountapp Account = new accountapp(1001, "john", 45000);
+        
+        System.out.println(Account); 
+        System.out.println("balance:"+Account.getBalance());
+        Account.withdraw(3000);
+         System.out.println("balance:"+Account.getBalance());
+          System.out.println("====after deposit 4000===");
+          Account.deposit(4000);
+          System.out.println("balance:"+Account.getBalance());
+
+
+}
+}
+
+4.class Employee{
+    int id;
+    String name;
+    String dept;
+    public Employee(int id,String name,String dept)
+    {
+        super();
+        this.id=id;
+        this.name=name;
+        this.dept=dept;
+    }
+    @Override
+    public String toString() {
+        return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + "]";
+    }
+    
+}
+public class ToStringDemo
+{
+    public static void main(String[] args)
+    {
+        int salary=45000;
+        Employee employee=new Employee(1001,"rohit","hr");
+        System.out.println(salary);
+        System.out.println(employee);
+    }
+}
+
+5.class Parent
+{
+    void mothertonge()
+    {
+        System.out.println("Speak tamil");
+    }
+}
+class Child extends Parent
+{
+    void mothertonge()
+    {
+        super.mothertonge();
+        System.out.println("Speak English");
+    }
+}
+public class inheritance{
+    public  static void main(String[] args)
+    {
+        Child child = new Child();
+        child.mothertonge();
+    }
+}
+
+7.class Bank{
+    int amount = 1;
+
+}
+class Axis extends Bank{
+int amount = 2;
+void test()
+{
+    int amount=3;
+    System.out.println(super.amount);
+    System.out.println(this.amount);
+    System.out.println(amount);
+}
+}
+
+
+
+public class SuperDemo {
+    public static void main(String[] args)
+    {
+        Axis axis = new Axis();
+        axis .test();
+    }
+    
+}
