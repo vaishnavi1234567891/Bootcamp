@@ -1,0 +1,159 @@
+1.//static
+    class Emp{
+    int id;
+    String name;
+    static String dept;
+}
+
+public class Employee{
+    public static void main(String[] args){
+        Emp.dept="developer";
+        Emp e1=new Emp();
+        e1.id=1;
+        e1.name="sachin";
+        Emp e2=new Emp();
+        e2.id=2;
+        e2.name="manish";
+        System.out.println(e1.id+" "+e1.name+" "+e1.dept);
+         System.out.println(e2.id+" "+e2.name+" "+e2.dept);
+    }
+
+}
+
+2.//inheritance
+  class Parent
+{
+    int id;
+    public Parent(int id)
+    {
+        System.out.println("parent  constructor"+id);
+    }
+    public Parent()
+    {
+      System.out.println("default  constructor");
+    }
+}
+class Child extends Parent{
+public Child()
+{
+    super();
+    System.out.println("child constructor");
+}
+}
+
+public class inheritance {
+    public static void main(String[] args){
+        Child child= new Child();
+
+    }
+    
+}
+
+3.interface Bank
+{
+    int salary=5000;
+    void greet();
+}
+class Axis implements Bank{
+    @Override
+    public void greet()
+    {
+        System.out.println("Welcome all...");
+    }
+}
+public class Interface {
+    public static void main(String[] args){
+        Axis axis = new Axis();
+        axis.greet();
+        Bank bank=new Axis();
+        bank.greet();
+
+    }
+    
+}
+
+4.interface Bank
+{
+    int salary=5000;
+    void greet();
+}
+interface RBI extends Bank
+{
+    void atmGuideLines();
+}
+class Axis implements RBI{
+    @Override
+    public void greet()
+    {
+        System.out.println("Welcome all...");
+    }
+    @Override
+    public void atmGuideLines(){
+        System.out.println("Pin safe rule");
+
+    }
+}
+public class Interface {
+    public static void main(String[] args){
+        Axis axis = new Axis();
+        axis.greet();
+        Bank bank=new Axis();
+        bank.greet();
+
+    }
+    
+}
+
+5.interface Breakfast
+{
+    void eat();
+}
+class Idly implements Breakfast
+{
+    @Override
+    public void eat()
+    {
+        System.out.println("eating idly");
+    }
+} 
+class Dosa implements Breakfast
+{
+    @Override
+    public void eat()
+    {
+        System.out.println("eating dosa");
+    }
+
+}
+public class LooselyCoupled {
+    public static void main(String[] args){
+        Breakfast breakfast=new Dosa();
+        breakfast.eat();
+    }
+    
+}
+
+6.class Flipkart{
+    void search()
+    {
+        System.out.println("default search");
+    }
+    void filter(int price)
+    {
+ System.out.println("filter by price");
+    }
+    void filter(String brand){
+System.out.println("filter by brand");
+    }
+    void filter(String brand, int price ){
+System.out.println("filter by brand and price");
+    }
+}
+public class OverloadingDemo {
+    
+    public static void main(String[] args)
+    {
+        Flipkart flipkart =new Flipkart();
+        flipkart.filter("nike",678);
+    }
+}
