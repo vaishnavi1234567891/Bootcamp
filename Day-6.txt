@@ -1,0 +1,213 @@
+class User
+{
+    public void checkEligibility(int age)
+    {
+        if(age>=18)
+        System.out.println("You are eligible to vote");
+        else
+        throw new ArithmeticException("you are not eligible to vote");
+    }
+}
+
+public class Throwdemo {
+    public static void main(String[] args){
+        User user = new User();
+        user.checkEligibility(12);
+
+
+    }
+    
+}
+------------------------------------------------------------------------------------------------------------------------
+class InValidAgeException extends RuntimeException
+{
+    String msg;
+    public InValidAgeException (String msg);{
+    super();
+    this.msg=msg;
+}
+public String getMsg()
+{
+    return msg;
+}
+}
+class Customer{
+    public static void main(String[] args){
+        if(age>=18)
+        System.out.println("Eligible to vote");
+        else
+        throw new InValidAgeException("age is less,minimum should be 18")
+
+    }
+
+}
+
+
+
+public class UserDefinedException {
+    public static void main(String[] args){
+        Customer customer = new Customer();
+        try{
+            customer.checkEligibility(23);
+        }
+        catch (InValidAgeException e)
+        {
+            System.out.println(e.getMsg());
+        }
+
+    }
+    
+}
+---------------------------------------------------------------------------------------------------------------
+package com.telstra.day6;
+
+import java.util.ArrayList;
+
+
+public class GenericCollection {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> nums = new ArrayList<Integer>;
+		nums.add(1);
+		nums.add(2);
+		//nums.add("manish");
+		
+		ArrayList<String> fruits = new ArrayList<String>();
+		fruits.add("apple");
+		fruits.add("banana");
+		fruits.add("mango");
+		
+		ArrayList<Product> products = new ArrayList<Product>();
+		products.add(new Product(1,"laptop",68000,"electronics"));
+		products.add(p1);
+		
+		for(Product product : products)
+		{
+			System.out.println(product);
+		}
+
+	}
+
+}
+===============================================================================
+
+package com.telstra.day6;
+
+import java.util.ArrayList;
+
+
+public class MethodsDemo {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> num1 = new ArrayList<Integer>();
+		num1.add(1);
+		num1.add(2);
+		num1.add(3);
+		num1.add(4);
+		num1.add(5);
+		
+		System.out.println("num 1:"+ num1);
+		
+		ArrayList<Integer> num2 = new ArrayList<Integer>();
+		num2.add(4);
+		num2.add(5);
+		num2.add(6);
+		num2.add(7);
+	    num2.add(8);
+	    
+	    System.out.println("num 2:"+ num2);
+	    
+	    ///num2.addAll(num1);
+	   // num2.retainAll(num1);
+	    num2.removeAll(num1);
+	    System.out.println("num 2:"+ num2);
+		
+	}
+
+}
+=========================================================================================
+package com.telstra.day6;
+
+import java.util.ArrayList;
+
+public class IterateElements {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+		nums.add(4);
+		nums.add(5);
+		
+		for(Integer num : nums)
+		{
+			System.out.println(num);
+		}
+
+	}
+
+}
+================================================================================================
+
+
+package Bootcamp.Day6.Collection;
+
+public class Product {
+	
+	private int id;
+	private String name;
+	private int price;
+	private String category;
+	
+	
+	public Product() {
+		super();
+	}
+
+	public Product(int id, String name, int price, String category) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.category = category;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", category=" + category + "]";
+	}
